@@ -2,6 +2,7 @@ public class RBTree {    // red-black tree for organizing products
     private TreeNode root = null; // root node of tree
 
     // insert product into tree
+    // insertion takes approximately logN time due to the height of the red-black tree being logN. In this case, N would equal some number close to 10,000
     public void insert(TreeNode product) {
 
 // if there are no nodes, first insert becomes root
@@ -132,6 +133,7 @@ public class RBTree {    // red-black tree for organizing products
     }
 
     // search for product via given productId
+    // search takes logN time bc height of red-black tree is logN
     public TreeNode search(String productId) {
         TreeNode current = root;
         while (current != null) {
