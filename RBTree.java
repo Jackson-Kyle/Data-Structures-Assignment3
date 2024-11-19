@@ -1,4 +1,4 @@
-public class RBTree {    // red-black tree for organizing product records
+public class RBTree {    // red-black tree for organizing products
     private TreeNode root = null; // root node of tree
 
     // insert product into tree
@@ -7,7 +7,7 @@ public class RBTree {    // red-black tree for organizing product records
 // if there are no nodes, first insert becomes root
         if (root == null) {
             root = product;
-            root.isRed = false; // root always be black
+            root.isRed = false; // root always black
 
             return;
         }
@@ -44,7 +44,7 @@ public class RBTree {    // red-black tree for organizing product records
         fixInsert(product);
     }
 
-   // fixes any problems with the red-black tree after new node is inserted
+   // fixes any problems with the red-black tree after new node is inserted such as right child red nodes or double red nodes
     // allows tree to stay relatively balanced so that the height of the tree stays low, increasing efficiency
     private void fixInsert(TreeNode node) {
         while (node != root && node.parent.isRed) {
