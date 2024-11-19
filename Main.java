@@ -7,6 +7,7 @@ public class Main {
         // path to the .csv file
         String csvFile = "C:\\Users\\kdj51\\IdeaProjects\\Assignment3\\src\\amazon-product-data.csv";
 
+        // read the file
        CSVReader.parseCSV(csvFile, tree);
 
        // create nodes to insert
@@ -36,8 +37,8 @@ public class Main {
                 System.out.println("Name: " + result.name);
                 System.out.println("Category: " + result.category);
                 System.out.println("Price: " + result.price);
-            } else { // product not in tree
-                System.out.println("\nProduct with ID " + searchKey + " not found.");
+            } else { 
+                System.out.println("\nProduct with ID " + searchKey + " not found."); // product not in tree
             }
         }
 
