@@ -7,7 +7,7 @@ public class CSVReader {
     public static void parseCSV(String filePath, RBTree tree) {
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
-            int lineNum = 0; // track line numbers for logging issues with malformed lines
+            int lineNum = 0; // track line numbers for issues with messed up lines
 
             br.readLine(); // skip first line bc its a header
 
@@ -20,7 +20,7 @@ public class CSVReader {
 
                 // check if the line is missing any fields
                 if (fields == null ||fields.length > 4) {
-                    System.out.println("Skipping malformed line " + lineNum + ": " + line);
+                    System.out.println("Skipping line " + lineNum + ": " + line);
                     continue;
                 }
 
@@ -74,7 +74,7 @@ public class CSVReader {
             fields[fieldIndex++] = field.toString();
         }
 
-        // Ensure all 4 fields are filled; return null if fields are missing
+        // return null if any fields are missing
         return fieldIndex == 4 ? fields : null;
     }
 }
