@@ -3,6 +3,7 @@ public class RBTree {    // red-black tree for organizing products
 
     // insert product into tree
     // insertion takes approximately logN time due to the height of the red-black tree being logN. In this case, N would equal some number close to 10,000
+    // it is important that the tree is balanced via the efficient nature of red-black trees or else the insertion time would be considerably longer
     public void insert(TreeNode product) {
 
 // if there are no nodes, first insert becomes root
